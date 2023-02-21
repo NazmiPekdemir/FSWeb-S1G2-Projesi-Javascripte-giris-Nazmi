@@ -20,6 +20,13 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+let surucuYasi = 15;
+if (surucuYasi >= 18 ) {
+  console.log('true');
+}  else {
+  console.log('false')
+}
+
 
 
 /*
@@ -34,7 +41,16 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+let birinci_deger = 12;
+let ikinci_deger = 27;
 
+if (birinci_deger > ikinci_deger){
+ console.log('true');
+} else {
+ console.log('Birinci Değer 30 olarak değiştiriliyor.');
+ birinci_deger = 30; 
+ console.log ('Birinci Değer = ', birinci_deger );
+}
 
 
 
@@ -49,7 +65,9 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
-
+let string = "1999";
+const numberSayi = Number(string)
+console.log(numberSayi);
 
 
 /*
@@ -61,10 +79,10 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamlayın:
    3. console.log(carpma(7,4)) ile yazdığınız fonsiyonu test edin. Console'da sonucu 28 olarak görmelisiniz.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b){
+  return a*b ;
 }
-
+console.log(carpma(7,4))
 
 
 
