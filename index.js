@@ -117,27 +117,24 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar){
-  switch (oyuncu) {
-    case "Taş":
-      return bilgisayar === "Makas"
-        ? "Kazandın!"
-        : bilgisayar === "Kağıt"
-        ? "Kaybettin!"
-        : "Beraberlik";
-
-    case "Kağıt":
-      return bilgisayar === "Makas"
-        ? "Kaybettin!"
-        : bilgisayar === "Kağıt"
-        ? "Beraberlik"
-        : "Kazandın!";
-
-    case "Makas":
-      return bilgisayar === "Makas"
-        ? "Beraberlik"
-        : bilgisayar === "Kağıt"
-        ? "Kazandın!"
-        : "Kaybettin!";
+  if (oyuncu === "Taş" && bilgisayar === "Kağıt"){
+    return ("Kaybettin!");
+  } else if (oyuncu === "Taş" && bilgisayar === "Makas"){
+    return ("Kazandın!");
+  }  else if (oyuncu === "Taş" && bilgisayar === "Taş"){
+    return ("Beraberlik");
+  }  else if (oyuncu === "Kağıt" && bilgisayar === "Taş"){
+    return ("Kazandın!");
+  }  else if (oyuncu === "Kağıt" && bilgisayar === "Makas"){
+    return ("Kaybettin!");
+  }  else if (oyuncu === "Kağıt" && bilgisayar === "Kağıt"){
+    return ("Beraberlik");
+  }  else if (oyuncu === "Makas" && bilgisayar === "Makas"){
+    return ("Beraberlik");
+  }  else if (oyuncu === "Makas" && bilgisayar === "Kağıt"){
+    return ("Kazandın!");
+  }  else if (oyuncu === "Makas" && bilgisayar === "Taş"){
+    return ("Kaybettin!");
   }
 }
 
@@ -156,8 +153,23 @@ function oyun(oyuncu, bilgisayar){
 Şimdi kendi seçtiğiniz bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığınız oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+//Güncelleme
+function bilgisayarinSecimi(secim) {
+  secim = Math.floor(Math.random()*2);
+  if(secim < 1){
+     return "Taş";
+  }  else if (secim < 2){
+    return "Kağıt";
+  } else {
+   return "Makas";
+  }
+}
 
-function bilgisayarinSecimi() {
+console.log(oyun("Makas",bilgisayarinSecimi()));
+
+
+//Eski yaptığım
+/*function bilgisayarinSecimi() {
   let pcsecim = Math.random()*3;
   if (pcsecim < 1) {
     return "Taş";
@@ -168,7 +180,7 @@ function bilgisayarinSecimi() {
 }
 }
 
-console.log(oyun("Makas", bilgisayarinSecimi()));
+console.log(oyun("Makas", bilgisayarinSecimi()));*/
 
 
 
@@ -279,9 +291,11 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(str) {
+  return str.match(/[aeıioöuü]/gi).length
 }
+ let cümle = "Ali Ayşe`ye topu at."
+ console.log( cümle + " cümlesinde " + sesliHarfSayaci(cümle) + " tane sesli harf var.")
 
 
 
