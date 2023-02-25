@@ -41,16 +41,14 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-let birinci_deger = 12;
-let ikinci_deger = 27;
-
-if (birinci_deger > ikinci_deger){
- console.log('true');
-} else {
- console.log('Birinci Değer 30 olarak değiştiriliyor.');
- birinci_deger = 30; 
- console.log ('Birinci Değer = ', birinci_deger );
-}
+let sayi1 = 18;
+let sayi2 = 27;
+if(sayi1 < sayi2){
+  console.log("sayi2 büyüktür sayi2");
+  let arti = sayi2-sayi1;
+  sayi1 = sayi1 + (arti+1);
+} 
+console.log (sayi1);
 
 
 
